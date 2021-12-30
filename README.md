@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Cypress
+
+Run `ng add @cypress/schematic`
+
+Cypress will be set up with a default config, and basic files and folders will be installed within your project in the cypress folder - including an initial test.
