@@ -1,0 +1,36 @@
+<ng-container *ngIf="pets$ | async as pets; else loading">
+
+  <div class="mb-3">
+    <label for="fieldName" class="form-label">Filter on <strong>name</strong></label>
+    <input type="text" [formControl]="nameFilter" class="form-control form-control-lg" id="fieldName">
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col" *ngFor="let pet of pets | sortByField:'name':sortOrder">
+      <div class="card shadow-sm">
+        <h2 class="px-2">{{pet.name}}</h2>
+        <div class="image-wrapper" style="height: 250px; width: auto;">
+          <img [src]="'https://pettinder.herokuapp.com/'+ pet.image" class="profile-picture" alt="{{pet.name}}">
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{pet.profileText | slice:0:80}}...</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Date</button>
+            </div>
+            <small class="text-muted">Popularity: <strong>{{pet.popularity}}</strong></small>
+            <small class="text-muted">Kind: <strong>{{pet.kind}}</strong></small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div class="text-center">
+    <div class="spinner-border" role="status"></div>
+  </div>
+</ng-template>

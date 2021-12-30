@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Include any default Bootstrap variable overrides here
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Add custom (s)css as of here
+
+@import "variables";
+
+.spinner-border {
+  width: 8rem;
+  height: 8rem;
+}
+
+.image-wrapper {
+  background-color: $theme-gray;
+}

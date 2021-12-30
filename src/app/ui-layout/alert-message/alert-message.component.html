@@ -1,0 +1,9 @@
+<section class="my-5" *ngIf="alertMessages$ | async as alertMessage">
+
+  <div class="alert alert-dismissible fade show" role="alert"
+       [ngClass]="alertMessage.type === 'SUCCESS' ? 'alert-success' : 'alert-danger'">
+    <strong>{{alertMessage.title | titlecase}}</strong>: {{alertMessage.description}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+</section>

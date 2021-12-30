@@ -1,0 +1,9 @@
+@import "src/variables";
+
+.nav-item:hover {
+  background-color: grey;
+}
+
+.nav-item .active {
+  background-color: $theme-red;
+}

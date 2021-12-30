@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <app-page>
+      <router-outlet></router-outlet>
+    </app-page>`
 })
 export class AppComponent {
-  title = 'petmatch';
 }

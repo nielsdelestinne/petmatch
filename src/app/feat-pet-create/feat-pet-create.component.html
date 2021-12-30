@@ -1,0 +1,51 @@
+
+
+
+<form (ngSubmit)="onSubmit()" [formGroup]="createPetForm">
+  <div class="mb-3">
+    <label for="fieldName" class="form-label">Your pet's <strong>name</strong></label>
+    <input type="text" formControlName="name" class="form-control form-control-lg" id="fieldName">
+  </div>
+  <div class="mb-3">
+    <label for="selectKind" class="form-label">What <strong>kind</strong> of pet do you have?</label>
+    <select  formControlName="kind" class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="selectKind">
+      <option selected disabled>Select an option</option>
+      <option value="Cat">Cat</option>
+      <option value="Dog">Dog</option>
+      <option value="Chicken">Chicken</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="fieldPicture" class="form-label">Your pet's <strong>picture</strong></label>
+    <input type="text" formControlName="image" class="form-control form-control-lg" id="fieldPicture" aria-describedby="pictureHelp">
+    <div id="pictureHelp" class="form-text">Provide the filename + extension (e.g. cat3.jpg). Only extensions jpg, jpeg, png and gif are allowed.</div>
+  </div>
+  <div class="mb-3">
+    <label for="fieldDescription" class="form-label"><strong>Describe</strong> your pet</label>
+    <input type="text" formControlName="profileText" class="form-control form-control-lg" id="fieldDescription">
+  </div>
+  <div class="mb-3">
+    <label for="selectPopularity" class="form-label">How <strong>popular</strong> is your pet?</label>
+    <select  formControlName="popularity" class="form-select form-select-lg mb-3" aria-label=".form-select-lg" id="selectPopularity">
+      <option value="0" selected>Zero</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!createPetForm.valid">Create</button>
+
+  <div class="my-3">
+    <div *ngIf="name.errors?.['minlength']">
+      <p class="invalid-message">Your pet's <strong>name</strong> must be at least 3 characters long.</p>
+    </div>
+  </div>
+  <div class="my-3">
+    <div *ngIf="image.errors?.['pattern']">
+      <p class="invalid-message">For the <strong>picture</strong>, provide the filename + extension (e.g. cat3.jpg). Only extensions jpg, jpeg, png and gif are allowed.</p>
+    </div>
+  </div>
+
+</form>

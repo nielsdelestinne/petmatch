@@ -1,0 +1,10 @@
+@import "src/variables";
+
+
+h1 {
+  color: white;
+
+  span {
+    color: $theme-red;
+  }
+}
