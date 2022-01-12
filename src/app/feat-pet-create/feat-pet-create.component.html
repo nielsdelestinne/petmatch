@@ -43,6 +43,11 @@
     </div>
   </div>
   <div class="my-3">
+    <div *ngIf="name.errors?.['required'] && !name.pristine">
+      <p class="invalid-message">Your pet's <strong>name</strong> is required to be filled in.</p>
+    </div>
+  </div>
+  <div class="my-3">
     <div *ngIf="image.errors?.['pattern']">
       <p class="invalid-message">For the <strong>picture</strong>, provide the filename + extension (e.g. cat3.jpg). Only extensions jpg, jpeg, png and gif are allowed.</p>
     </div>
